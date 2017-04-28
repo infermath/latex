@@ -1,0 +1,127 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\hoffset=-.3in
+\voffset=-.4in
+
+\begin{frame}[c]
+
+\centering
+
+\vspace{1cm}
+G - Geometric (p)
+
+\vspace{1cm}
+\onslide<3->{Probability distribution function}
+\onslide<2->{ $P(G = k) = pq^k} $ \\
+
+\vspace{1cm}
+\onslide<5->{Cumulative distribution function}
+\onslide<4->{ $P(G \leq k) = 1-q^k} $ \\
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\vspace{1cm}
+
+Geometric (p)
+
+$G = min \{i | X_{i+1} =1\} $ \\
+$X_1, X_2, ... $ - i.i.d. Bernoulli(p) \\
+
+\begin{align*} 
+& \onslide<2->{P(G=0)}\onslide<3->{= p} \\
+& \onslide<4->{P(G=1)}\onslide<5->{= p}\onslide<6->{q} \\
+& \onslide<7->{P(G=2)}\onslide<8->{=p}\onslide<9->{q^2} \\
+& \onslide<10->{...} \\
+& \onslide<11->{P(G=k) = pq^k} \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\scalebox{0.5}{\includegraphics{ruletka}}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*} 
+& \sum_{k=0}^{\infty}{P(G=k)} \onslide<2->{=\sum_{k=0}^{\infty}pq^k} \\
+& \onslide<3->{=p(1+q+q^2+...)} \onslide<7->{=p\frac{1}{1-q}}\onslide<8->{= p\frac{1}{p}}\onslide<9->{=1} \\
+& \onslide<4->{(1+q+q^2+...) = \frac{1}{1-q}} \\
+& \onslide<5->{(1-q)(1+q+q^2+...) = 1} \\
+& \onslide<6->{(1+q+q^2+...) - (q+q^2+...) = 1} \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*} 
+& P(G\leq n) \onslide<2->{=1-P(G > n)} \\
+& \onslide<3->{=1-\sum_{k=n+1}^{\infty}pq^k} \\
+& \onslide<4->{=1-p(q^{n+1}+q^{n+2}+q^{n+3}+...)}\\
+& \onslide<5->{=1-q^{n+1}p(1+q+q^2+...)}\\
+& \onslide<6->{=1-q^{n+1}} \\
+& \onslide<7->{(1+q+q^2+...+q^n) = \frac{1-q^{n+1}}{1-q}} \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\vspace{1cm}
+
+\onslide<3->{Geometric (p)}
+
+\onslide<2->{$G = min \{i | X_{i+1} =1\}} $ \\
+$X_1, X_2, ... $ - i.i.d. Bernoulli(p) \\
+
+\end{frame}
+
+
+\end{document}

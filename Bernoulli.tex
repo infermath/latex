@@ -1,0 +1,234 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% wielkosc liter
+\usepackage{relsize}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\definecolor{MyRed}{RGB}{205,38,38}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+\setbeamercolor*{enumerate item}{fg=MyFavourite}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.5}{\includegraphics{Rlogo-1}}
+
+\end{frame}
+
+\begin{frame}
+
+\LARGE Probability \\
+
+\normalsize
+\begin{enumerate}
+
+\item{\textbf{\onslide<4->{Discrete} \onslide<3->{Random} \onslide<2->{Variables}}} \\
+
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\large Fair coin toss \\
+
+$P(X=1) = P(X=0) = 0.5$ \\
+
+\vspace{1cm}
+
+\onslide<4->{Bernoulli random variable} \\
+
+\onslide<2->{$P(X=1)= p$}
+\onslide<3->{$P(X=0) = q = 1-p$}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\begin{align*}
+&{n \choose k}=\frac{n!}{k!(n-k)!} \\
+&(p+q)^n = \sum_{k=0}^{n}{n \choose k}p^{k}q^{n-k} 
+\end{align*}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\begin{align*}
+& 1+q+q^2+... = \frac{1}{1-q} \\ 
+& 1+q+q^2+...+q^n = \frac{1-q^{n+1}}{1-q} 
+\end{align*}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\large Bernoulli(p) \\
+
+$P(X=1)= p$
+$P(X=0) = q = 1-p$
+
+\vspace{1cm}
+
+\onslide<2->{ Binomial (n,p) }
+
+\onslide<3->{$S = X_1 + X_2 + ... + X_n$}
+\onslide<4->{$X_1, X_2, ... X_n $ - i.i.d Bernoulli(p)}
+
+\end{frame}
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Fair Coin Toss
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Discrete Random Variables
+
+\column{0.3\textwidth}
+\scalebox{3}{\color{MyRed} 1}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Bernoulli RV
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Discrete Random Variables
+
+\column{0.3\textwidth}
+\scalebox{3}{\color{MyRed} 2}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Binomial RV 1
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Discrete Random Variables
+
+\column{0.3\textwidth}
+\scalebox{3}{\color{MyRed} 3}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Geometric 3
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Discrete Random Variables
+
+\column{0.3\textwidth}
+\scalebox{3}{\color{MyRed} 8}
+
+\end{columns}
+
+\end{frame}
+
+
+\end{document}
+
+

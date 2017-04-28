@@ -1,0 +1,156 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{txfonts}
+\usepackage{multirow}
+\usepackage[percent]{overpic}
+\usepackage{textcomp}
+\usepackage{framed}
+
+
+% wielkosc liter
+\usepackage{relsize}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\definecolor{MyRed}{RGB}{205,38,38}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+\setbeamercolor*{enumerate item}{fg=MyFavourite}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+\usetikzlibrary{positioning}
+
+\newcommand{\heart}{\ensuremath\varheartsuit}
+\newcommand{\myitem}[1]{\setbeamercolor{item}{fg=MyFavourite}\item #1} 
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.4}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath.com
+
+\Large Open source of math 
+
+\end{frame}
+
+
+\begin{frame}[c]
+
+\centering
+Zero coupon bond
+
+\vspace{-1cm}
+
+\begin{align*}
+\onslide<2->{Issuer: & Infermath.com}\\
+\onslide<3->{Maturity: & 01.04.2019} \\
+\onslide<4->{Notional: & 100} \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+YTM - Yield To Maturity
+
+\vspace{-1cm}
+
+\begin{align*}
+\onslide<5->{2y:& Notional=} \onslide<2->{Price} \onslide<3->{(1+YTM)} \onslide<4->{^{2}}\\
+\onslide<6->{10y:& Notional= Price(1+YTM)^{10}} \\
+\onslide<7->{n y:& Notional= Price(1+YTM)^n} \\
+\onslide<8->{YMT& =(Notional/Price)^{1/n} - 1} 
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}[c]
+\centering
+Summary
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{framed}
+\centering
+\textbf{Bond} \\
+\vspace{0.5cm}
+\onslide<2->{Issuer}\\
+\onslide<3->{Maturity} \\
+\onslide<4->{Notional} \\
+\end{framed}
+\end{column}
+
+
+\begin{column}{0.5\textwidth}
+\color{MyRed}
+\begin{framed}
+\centering
+\textbf{Market} \\
+\vspace{0.5cm}
+\onslide<5->{Owner}\\
+\onslide<6->{Price} \\
+\onslide<7->{Yield} \\
+\end{framed}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+
+\huge
+
+Zero bonds \& \\
+Yield Concepts\\
+Fixed Income
+
+\end{frame}
+
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath 
+
+\normalsize Open source of math 
+
+\vspace{1cm}
+
+\large www.infermath.com \\
+www.facebook.com/infermath 
+
+\end{frame}
+
+\end{document}
+
+

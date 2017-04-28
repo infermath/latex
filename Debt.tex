@@ -1,0 +1,282 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage[percent]{overpic}
+
+% wielkosc liter
+\usepackage{relsize}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\definecolor{MyRed}{RGB}{205,38,38}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+\setbeamercolor*{enumerate item}{fg=MyFavourite}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+\usetikzlibrary{positioning}
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+
+\begin{frame}[c]
+
+\centering
+
+\LARGE Financial markets \\
+
+\vspace{1cm}
+\begin{overlayarea}{\textwidth}{0.6\textheight}
+	\centering
+	\only<2>{Concept + Valuation}
+	\color{MyRed}
+	\only<3>{\scalebox{3.5}{DEBT}}
+	\only<4>{\scalebox{3.5}{SIN}}
+	\only<5>{\scalebox{3.5}{GUILT}}
+	\color{MyFavourite}
+	\only<6>{Fixed Income}
+\end{overlayarea}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\begin{tikzpicture}[
+node distance=1.5cm and 3cm,
+squarednode/.style={rectangle, align = center, text centered},
+baseline={([yshift=-1ex]current bounding box.center)}
+%squarednode/.style={rectangle, draw=MyFavourite!60, fill=MyFavourite!5, very thick, minimum size=3cm},
+]
+
+\node[squarednode]      (me)
+{ 
+	\begin{overpic}[height=3cm]{me}
+		\put(15,65){\onslide<10-18>{\includegraphics[height=1cm]{pirate}}}
+		\color{MyRed}
+		\put(30,10){\only<5-10>{4\%}}
+		\put(20,10){\only<11-19>{50\%}}
+		\put(30,10){\only<20->{0\%}}
+	\end{overpic}
+};
+
+\onslide<2-16>{
+	\node[squarednode]      (parrot)      [below=of me] 			
+	{
+		\begin{overpic}[height=3cm]{parrot}
+			\color{MyRed}
+			\put(-15,60){\onslide <3-> {\$100}}
+		\end{overpic}
+	};
+}
+
+\onslide<17->{
+	\node[squarednode]      (upsideparrot)      [below=of me] 			
+	{
+		\includegraphics[height=3cm]{upsideparrot}
+	};
+}
+
+\onslide<4-> {
+	\node[squarednode]      (bank1)       [right=of me] 			
+	{
+		\begin{overpic}[height=2cm]{bank}
+			\color{MyRed}
+			\put(3,20){\onslide<6->{1\%}}
+		\end{overpic}
+		\\Bank
+	};
+}
+
+\onslide<12-15> {
+	\node[squarednode]      (bank2)       [below=of bank1]  			
+	{
+		\begin{overpic}[height=2cm]{bank}
+			\color{MyRed}
+			\put(3,20){\onslide<13-15>{2\%}}
+		\end{overpic}
+		\\Bank
+	};
+}
+
+%Lines
+\onslide<7-> 
+\draw[->,ultra thick] ([yshift=1cm]bank1.west) -- ([yshift=1cm]me.east) node[midway,align=center] {Now: \\ \$100};
+
+\onslide<8-17> 
+\draw[->,ultra thick] ([xshift=-0.5cm]me.south) -- ([xshift=-0.5cm]parrot.north)node[midway,left] {\$100 };
+\draw[->,ultra thick] ([xshift=0.5cm]parrot.north) -- ([xshift=0.5cm]me.south)node[midway]{};
+
+\onslide<18-> 
+\draw[->,ultra thick] ([xshift=-0.5cm]parrot.north) -- ([xshift=-0.5cm]me.south)node[midway,left] {\$105 };
+\draw[->,ultra thick] ([xshift=0.5cm]me.south) -- ([xshift=0.5cm]parrot.north)node[midway]{};
+
+\onslide<9-13,16->
+\draw[->,ultra thick] ([yshift=-1cm]me.east) -- ([yshift=-1cm]bank1.west) node[midway,align=center] {1y: \\ \$105 };
+%\draw[->] (me.south) .. controls +(down:7mm) and +(right:7mm) .. (bank2.west);
+
+\onslide<14-15>
+\draw[->,ultra thick] (me.south east) -- (bank2.north west) node[midway,align=center] {1y: \\ \$105 };
+
+\onslide<15>
+\draw[->,ultra thick] (bank1.south) -- (bank2.north) node[midway,right] {\$47 };
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\LARGE Financial markets \\
+\normalsize
+
+\vspace{1cm}
+
+\begin{tabular}{ l r }
+\onslide<2->{Tools:}& \onslide<4->{\multirow{3}{*}{\scalebox{0.5}{\includegraphics{Calc}}}} \\
+\onslide<3->{Microsoft Office Excel} & \\
+\onslide<4->{Apache Open Office Calc} &
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\begin{equation*}
+\underset{Value}{\underset{Present}{\scalebox{3}{PV}}} \onslide<2->{\scalebox{3}{=}
+\underset{Value}{\underset{Future}{\scalebox{3}{FV}}}} \onslide<3->{  \scalebox{3}{$\cdot$}
+\underset{Factor}{\underset{Discount}{\scalebox{3}{DF}}}}
+\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Fixed Income
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Debt  \\ Concept
+
+\column{0.3\textwidth}
+\scalebox{3}{\color{MyRed} 1}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+
+\centering
+\Huge 
+
+\begin{columns}
+\column{0.5\textwidth}
+Fixed  \\ Income
+\column{0.5\textwidth}
+\includegraphics[height=5cm]{parrot} 
+\end{columns}
+
+\vspace{0.25cm}
+
+Debt Concept
+
+\end{frame}
+
+\begin{frame}
+
+\centering
+\Huge 
+
+\begin{columns}
+\column{0.5\textwidth}
+Fixed  \\ Income
+\column{0.5\textwidth}
+\includegraphics[height=5cm]{Calc} 
+\end{columns}
+
+\vspace{0.25cm}
+
+Debt Valuation
+
+\end{frame}
+
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath 
+
+\normalsize Open source of math 
+
+\vspace{1cm}
+
+\large www.infermath.com \\
+www.facebook.com/infermath 
+
+\end{frame}
+
+\end{document}
+
+

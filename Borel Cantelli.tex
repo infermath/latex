@@ -1,0 +1,337 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{mathtools}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% wielkosc liter
+\usepackage{relsize}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\definecolor{MyRed}{RGB}{205,38,38}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+\setbeamercolor*{enumerate item}{fg=MyFavourite}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+
+\begin{frame}[c]
+
+\centering
+
+Geometric (p) \\
+
+$G = min \{i | X_{i+1} =1\} $ \\
+$X_1, X_2, ... $ - i.i.d. Bernoulli(p) \\
+\onslide<2->{$P(E_k) = P(X_k = 1) = p $ }\\
+
+\vspace{1cm}
+
+\onslide<3->{
+$X_1, X_2, ... $ - Bernoulli \\
+$P(E_k) =P(X_k = 1)= p_k $ \\
+}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*}
+\onslide<2->{& (e_k) \in \{0,1\}^N} 
+\onslide<3->{\text{ has got infinitely many 1s/}} \\
+\onslide<4->{&\Leftrightarrow \mathop{\mathlarger{\mathlarger{\forall}}}_{n \in N}}
+\onslide<5->{\mathop{\mathlarger{\mathlarger{\exists}}}_{k \geq n}} 
+\onslide<6->{e_k = 1}\\
+\onslide<10->{& P(} 
+\onslide<7->{E_k\text{ happens infinitely many times}} 
+\onslide<10->{)  \\ & =P(}
+\onslide<8->{\bigcap_{n=1}^{\infty} }
+\onslide<9->{\bigcup_{k=n}^{\infty} E_k}
+\onslide<10->{)=?}
+\end{align*}
+
+\end{frame}
+
+% episode 2
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+
+\begin{frame}
+
+\hspace{-5cm}
+\vspace{-2cm}
+
+\hspace*{-0.95cm}\vbox{\begin{align*} 
+\onslide<2->{& 0 \leq} P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k ) 
+\onslide<3->{\leq P(\bigcup_{k=n}^{\infty} E_k)} 
+\onslide<4->{\leq \sum_{k=n}^{\infty}P(E_k)} \\
+\onslide<5->{& \lim_{n \rightarrow \infty}\sum_{k=n}^{\infty}P(E_k) }
+\onslide<6->{=0 \Leftrightarrow \sum_{n=1}^{\infty}P(E_n)<\infty} \\
+\onslide<7->{& \sum_{n=1}^{\infty}P(E_n)<\infty \implies} 
+\onslide<8->{P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k) =0 }
+\end{align*}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.2}{\includegraphics{nebula}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.15}{\includegraphics{galaxy}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.2}{\includegraphics{earth}}
+
+\end{frame}
+
+\begin{frame}
+
+\vspace{-0.5cm}
+
+\hspace*{-0.6cm}\vbox{\begin{align*} 
+& \sum_{n=1}^{\infty}P(E_n)<\infty \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=0 \\
+& \onslide<2->{\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k \text{- infinitely many events happen}} \\
+& \onslide<3->{\sum_{n=1}^{\infty}P(E_n)<\infty 
+\Leftrightarrow \lim_{n \rightarrow \infty}\sum_{k=n}^{\infty}P(E_k) = 0} \\
+\onslide<4->{& \begin{rcases}
+\underset{n \rightarrow \infty}{lim} a_n = \underset{n \rightarrow \infty}{lim} c_n = d \\
+a_n \leq b_n \leq c_n \text{ for all n} 
+\end{rcases} \implies \lim_{n \rightarrow \infty} b_n = d}
+\end{align*}}
+
+\end{frame}
+
+% episode 2
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}
+
+\hspace*{-0.5cm}\vbox{\begin{align*} 
+& E_1, E_2, ... \text{- series of events} \\
+& \sum_{n=1}^{\infty}P(E_n)<\infty \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=0
+\end{align*}}
+
+%\vspace{1cm}
+
+\hspace*{-0.5cm}\vbox{\begin{align*} 
+& \onslide<3->{E_1, E_2, ... \text{- series of independent events}}\\
+& \onslide<2->{\sum_{n=1}^{\infty}P(E_n)=\infty} 
+\onslide<4->{ \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=1}\\
+\end{align*}}
+
+\end{frame}
+
+\begin{frame}
+
+\centering
+
+$1+x \leq exp(x) $\\
+
+\onslide<2->{\scalebox{0.4}{\includegraphics{wykres1}}} \\
+
+\onslide<3->{$exp(x) = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...$}
+
+\end{frame}
+
+\begin{frame}
+
+\vspace{-1cm}
+
+\hspace*{-0.8cm}\vbox{\begin{align*} 
+& P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=1 
+\onslide<2->{\Leftrightarrow P(}\onslide<3->{\bigcup_{n=1}^{\infty}} 
+\onslide<4->{\bigcap_{k=n}^{\infty}} \onslide<5->{E_k^c} \onslide<2->{)=0}\\
+& \onslide<6->{P(\bigcap_{k=n}^{\infty} E_k^c) } \onslide<7->{= \prod_{k=n}^{\infty} P(E_k^c) } 
+\onslide<8->{= \prod_{k=n}^{\infty} (1-P(E_k)) } \\
+& \onslide<9->{\leq \prod_{k=n}^{\infty} exp(-P(E_k^c))} \onslide<10->{= exp(-\sum_{k=n}^{\infty}P(E_k^c)) }\\
+& \onslide<11->{=exp(-\infty)}\onslide<12->{=0}
+\end{align*}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.2}{\includegraphics{malpa}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.15}{\includegraphics{maszyna}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.2}{\includegraphics{szekspir}}
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+Geometric (p) \\
+
+$G = min \{i | X_{i+1} =1\} $ \\
+$X_1, X_2, ... $ - i.i.d. Bernoulli(p) \\
+$P(E_k) = P(X_k = 1) = p $ \\
+
+\begin{align*}
+& \onslide<2->{\sum_{k=1}^{\infty}P(E_k)}
+\onslide<3->{=\sum_{k=1}^{\infty}p }
+\onslide<4->{=\infty} \\
+& \onslide<5->{\implies P(G<\infty)=1}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\hspace*{-0.5cm}\vbox{\begin{align*} 
+%& \onslide<3->{E_1, E_2, ... \text{- series of independent events}}\\
+%& \onslide<2->{\sum_{n=1}^{\infty}P(E_n)=\infty} 
+%\onslide<4->{ \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=1}\\
+& E^c \Leftrightarrow not(E) \\
+& \onslide<2->{P(E)+P(E^c)=1} \\
+& \onslide<3->{(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)^c =
+\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} E_k^c}\\
+& \onslide<4->{P(\bigcap_{k=n}^{\infty} E_k) = \prod_{k=n}^{\infty} P(E_k) \text{ for independent } E_k} \\
+& \onslide<5->{1+x \leq exp(x)} \\
+\end{align*}}
+
+
+\end{frame}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\begin{frame}
+
+\hspace*{-0.5cm}\vbox{\begin{align*} 
+& E_1, E_2, ... \text{- series of events} \\
+& \sum_{n=1}^{\infty}P(E_n)<\infty \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=0
+\end{align*}}
+
+%\vspace{1cm}
+
+\hspace*{-0.5cm}\vbox{\begin{align*} 
+& E_1, E_2, ... \text{- series of independent events}\\
+& \sum_{n=1}^{\infty}P(E_n)=\infty \implies P(\bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} E_k)=1\\
+\end{align*}}
+
+\end{frame}
+
+
+\begin{frame}
+
+\vspace{-1cm}
+\hspace{-0.5cm}
+\Huge Borel Cantelli 4
+
+\vspace{1cm}
+
+\begin{columns}
+
+\column{0.7\textwidth}
+Discrete Random Variables
+
+\column{0.3\textwidth}
+\hspace*{-1.5cm}\vbox{\scalebox{3}{\color{MyRed} 12}}
+
+\end{columns}
+
+\end{frame}
+
+
+\end{document}
+
+

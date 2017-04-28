@@ -1,0 +1,119 @@
+\documentclass[20pt,xcolor={dvipsnames}]{beamer}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+
+%------------------------------------------------------------------
+\hfuzz20pt % Don't bother to report overfull boxes < 5pt
+
+\pagestyle{plain} % plain/empty
+\definecolor{MyFavourite}{RGB}{34, 139, 34}
+\setbeamercolor{normal text}{fg=MyFavourite,bg=black}
+%\setbeamersize{\hoffset = 0pt}
+%\addtobeamertemplate{frametitle}{\vspace{5cm}}
+\pagecolor{black}
+
+% remove page numbering
+\makeatletter
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+
+%%% --------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[c]
+
+\centering
+
+\scalebox{0.3}{\includegraphics{logo5}}
+
+\vspace{-1cm}
+
+\Huge Infermath
+
+\normalsize Open source of math 
+
+\end{frame}
+
+\hoffset=-.3in
+\voffset=-.4in
+
+\begin{frame}[c]
+
+\centering
+
+\vspace{1cm}
+
+Binomial (n,p)
+
+$S = X_1 + X_2 + ... + X_n$ \\
+$X_1, X_2, ... X_n $ - i.i.d. Bernoulli(p) \\
+
+\begin{align*} 
+& \onslide<2->{P(S=0) } \\
+& \onslide<3->{=P(X_1=X_2=...=X_n=0)} \\
+& \onslide<4->{=P(X_1=0)P(X_2=0)...P(X_n=0)} \\
+& \onslide<5->{=q^n} \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*} 
+& P(S=1) \onslide<2->{=P(\exists ! i: X_i=1)} \\
+& \onslide<3->{=P(X_1=1)P(X_2=0)...P(X_n=0)} \\
+& \onslide<4->{+P(X_1=0)P(X_2=1)...P(X_n=0)} \\
+& \onslide<5->{+...} \\
+& \onslide<6->{+P(X_1=0)P(X_2=0)...P(X_n=1)} \\
+& \onslide<7->{=}\onslide<9->{n}\onslide<7->{p}\onslide<8->{q^{n-1}} \\
+& \onslide<10->{P(S=k)=} \onslide<13->{{n \choose k}} \onslide<11->{p^{k}}\onslide<12->{q^{n-k}}\\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*} 
+& \sum_{k=0}^{n}{P(S=k)} \onslide<2->{=\sum_{k=0}^{n}{n \choose k}p^{k}q^{n-k}} \\
+& \onslide<3->{\overset{p=\frac{1}{2}}{=}\sum_{k=0}^{n}{n \choose k}\frac{1}{2^{k}}\frac{1}{2^{n-k}}} 
+\onslide<4->{=\frac{1}{2^{n}}\sum_{k=0}^{n}{n \choose k}} \\
+& \onslide<5->{=\frac{1}{2^{n}}2^{n}} \onslide<6->{=1}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{equation*} 
+\sum_{k=0}^{n}{n \choose k}p^{k}q^{n-k} \onslide<7->{=(p+q)^n} \onslide<8->{=1^n} \onslide<9->{=1} 
+\end{equation*}
+\begin{align*} 
+\onslide<2->{& 1 && (p+q)^n} \\
+\onslide<3->{1 & \quad 1 && p+q} \\ 
+\onslide<4->{1 \quad & 2 \quad 1 && p^2+2pq+q^2} \\
+\onslide<5->{1 \quad 3 & \quad 3 \quad 1 && p^3+3p^2q+3pq^2+q^3} \\
+\onslide<6->{1 \quad 4 \quad & 6 \quad 4 \quad 1 && ...}  \\
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{align*} 
+\{\{ 1\},\{0\},\{1,0\},\{\} \} \onslide<2->{=\{ \omega_{1},\omega_{2},\Omega,\emptyset \}}
+\end{align*}
+
+\onslide<3->{$\omega$ - elementary event} \\
+\onslide<3->{$\Omega$ - event space} \\
+
+\begin{equation*} 
+\onslide<4->{P(\Omega) = \sum_{\omega \in \Omega}{P(\omega)} = 1}
+\end{equation*}
+
+\end{frame}
+
+\end{document}
